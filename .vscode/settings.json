@@ -1,0 +1,6 @@
+{
+  "solidity.remappings": [
+    "hardhat/=smartcontract/node_modules/hardhat",
+    "@openzeppelin/contracts/=smartcontract/node_modules/@openzeppelin/contracts"
+  ]
+}
