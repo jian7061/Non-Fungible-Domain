@@ -7,7 +7,7 @@ const main = async () => {
   console.log("Contract deployed by:", owner.address);
 
   let txn = await domainContract.register("jian", {
-    value: hre.ethers.utils.parseEther(0.1),
+    value: hre.ethers.utils.parseEther("1"),
   });
   await txn.wait();
 
