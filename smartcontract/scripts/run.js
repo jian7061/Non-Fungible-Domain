@@ -1,7 +1,7 @@
 const main = async () => {
   const [owner, randomPerson] = await hre.ethers.getSigners();
   const domainContractFactory = await hre.ethers.getContractFactory("Domains");
-  const domainContract = await domainContractFactory.deploy("eth");
+  const domainContract = await domainContractFactory.deploy("ninja");
   await domainContract.deployed();
   console.log("Contract deployed to:", domainContract.address);
   console.log("Contract deployed by:", owner.address);
@@ -17,11 +17,10 @@ const main = async () => {
   const balance = await hre.ethers.provider.getBalance(domainContract.address);
   console.log("Contract balance:", hre.ethers.utils.formatEther(balance));
 
-  //trying to set a record that doesn't belong to me
-  txn = await domainContract
-    .connect(randomPerson)
-    .setRecord("doom", "My domain now");
-  await txn.wait();
+  // txn = await domainContract
+  //   .connect(randomPerson)
+  //   .setRecord("jian", "my domain now");
+  // await txn.wait();
 };
 
 const runMain = async () => {
